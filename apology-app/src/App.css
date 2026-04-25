@@ -1,0 +1,156 @@
+/* ── Page layout ── */
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ── Card ── */
+.card {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(14px);
+  border-radius: 2rem;
+  padding: 2.8rem 3rem;
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 8px 40px rgba(255, 130, 180, 0.25);
+  animation: popIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.7) translateY(30px); }
+  to   { opacity: 1; transform: scale(1)   translateY(0); }
+}
+
+/* ── Big emoji ── */
+.big-emoji {
+  font-size: 5rem;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-12px); }
+}
+
+/* ── Text ── */
+h1 {
+  font-size: 2.2rem;
+  color: #d63384;
+  margin: 0.4rem 0 0.2rem;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #a05090;
+  margin-bottom: 1rem;
+}
+
+.message {
+  font-size: 1rem;
+  color: #5a3d5a;
+  line-height: 1.7;
+  margin-bottom: 1.4rem;
+}
+
+.question {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #c2185b;
+  margin-bottom: 1.2rem;
+}
+
+/* ── Buttons ── */
+.buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 999px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.yes-btn {
+  background: linear-gradient(135deg, #ff6eb4, #ff9bd2);
+  color: #fff;
+  box-shadow: 0 4px 18px rgba(255, 110, 180, 0.45);
+}
+
+.yes-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 24px rgba(255, 110, 180, 0.6);
+}
+
+.no-btn {
+  background: #f3e8f7;
+  color: #9b4dca;
+  box-shadow: 0 2px 10px rgba(155, 77, 202, 0.2);
+  transition: all 0.2s ease;
+  z-index: 999;
+}
+
+.no-btn:hover {
+  transform: scale(0.9) rotate(-5deg);
+}
+
+/* ── Forgiven card burst ── */
+.forgiven-card {
+  animation: popIn 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.burst {
+  margin-top: 1.2rem;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.burst-emoji {
+  font-size: 1.8rem;
+  animation: flyUp 1s ease-out both;
+}
+
+@keyframes flyUp {
+  from { opacity: 0; transform: translateY(20px) scale(0.5); }
+  to   { opacity: 1; transform: translateY(0)   scale(1); }
+}
+
+/* ── Floating background hearts ── */
+.hearts-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.floating-heart {
+  position: absolute;
+  bottom: -60px;
+  animation: floatUp linear infinite;
+  opacity: 0.7;
+  user-select: none;
+}
+
+@keyframes floatUp {
+  0%   { transform: translateY(0)     rotate(0deg);   opacity: 0.8; }
+  50%  { transform: translateY(-50vh) rotate(20deg);  opacity: 0.6; }
+  100% { transform: translateY(-105vh) rotate(-10deg); opacity: 0; }
+}
+
